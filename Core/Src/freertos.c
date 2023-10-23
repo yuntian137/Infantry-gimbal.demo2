@@ -376,11 +376,7 @@ void jbgm(void const * argument)
 
           checksingle = 1;
           checkdr = 1;
-
-          //Setrpm = 6000;
         }
-           
-  //HAL_UART_Receive_DMA(&huart4,a,255);
   }
   /* USER CODE END jbgm */
 }
