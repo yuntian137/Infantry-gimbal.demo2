@@ -283,11 +283,9 @@ void StartDefaultTask(void const * argument)
 /* USER CODE END Header_gm2 */
 void gm2(void const * argument)
 {
-    vTaskDelay(3000);
+    vTaskDelay(3000);//延时3s保证稳定抬头
   /* USER CODE BEGIN gm2 */
     TickType_t lasttick = xTaskGetTickCount();    
-
-    //uint8_t BUFF[18];
   /* Infinite loop */
   for(;;)
   {
@@ -300,7 +298,7 @@ void gm2(void const * argument)
       //pitch前馈
       // pid_speed[n].out+= -(120.82f*(-Rx_Angle)) - 3623.5f;
       // pid_speed[n].out += -115.94f*(-Rx_Angle) - 1379.2f;
-      pid_speed[5].out += -96.61f * (-Rx_Angle) - 2570.5f;
+      pid_speed[5].out += -96.61f * (-Rx_Angle) - 2570.5f;//这套最好
       // 限制加前馈后的最大输出，需要注意，can包发送函数传参最大值为32767，如果不限制，会爆范围导致骤降到-32767，导致堵转。
       if (pid_speed[5].out > 30000)
       {
@@ -404,16 +402,6 @@ void IMUwuhu(void const * argument)
         while(mpu_dmp_get_data(&pitch, &roll, &yaw));	//必须要用while等待，才能读取成功
         MPU_Get_Accelerometer(&aacx,&aacy, &aacz);		//得到加速度传感器数据
         MPU_Get_Gyroscope(&gyrox, &gyroy, &gyroz);		//得到陀螺仪数据
-        
-//        temp=MPU_Get_Temperature();						//得到温度信息
-//         float data[3];
-//   data[0] = gyrox;
-//   data[1] = motor_chassis[5].speed_rpm*6;//调整拨盘电机的时候要除以三十六
-//   data[2] = xTaskGetTickCount();
-//   HAL_UART_Transmit(&huart4,(uint8_t*)data,sizeof(float)*3,0xFFFF);
-//   uint8_t tail[4] = {0x00, 0x00, 0x80, 0x7f};
-//   HAL_UART_Transmit(&huart4,tail,4,0xFFFF);
-      //printf("roll:%.1f  pitch:%.1f  yaw:%.1f  temp:%.2f\r\n",roll,pitch,yaw,temp/100);//串口4输出采集信息
     osDelay(1);
   }
   /* USER CODE END IMUwuhu */
@@ -513,28 +501,8 @@ void StartTask07(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-        // 打印pitch曲线
-    // float data[5];
-    // data[0] = Rx_0Angle;
-    // data[1] = 0;
-    // data[2] = pid_speed[3].out;
-    // data[3] = Rx_Omega;
-    // data[4] = motor_chassis[5].speed_rpm;
-    // HAL_UART_Transmit(&huart4, (uint8_t *)data, sizeof(float) * 5, 0xFFFF);
-    // uint8_t tail[4] = {0x00, 0x00, 0x80, 0x7f};
-    // HAL_UART_Transmit(&huart4, tail, 4, 0xFFFF);
-  
-         //PrintC(5,drpitch);
-         osDelay(5);
-        // 打印摩擦轮曲线
-                    float data[3];
-               data[0] = motor_chassis[1].speed_rpm;
-               data[1] = Setrpm;
-               data[2] = motor_chassis[2].speed_rpm;
-                    //data[3] = pid_omega[n].out;
-            HAL_UART_Transmit(&huart4,(uint8_t*)data,sizeof(float)*3,0xFFFF);
-            uint8_t tail[4] = {0x00, 0x00, 0x80, 0x7f};
-            HAL_UART_Transmit(&huart4,tail,4,0xFFFF);
+      //在这里存放调试曲线的打印函数
+      //上位机为vofa+，文件末尾有示例
     }
   /* USER CODE END StartTask07 */
 }
@@ -693,18 +661,9 @@ void pidsolvebp(int n,float Set_bpAngle)
     }
     bpTotal_Encoder = bpTotal_Round * Encoder_Num_Per_Round + bpRx_Encoder + 0;
     bpRx_Angle = (float)bpTotal_Encoder/(float)Encoder_Num_Per_Round * 360;
-    //Now_Torque = motor_chassis[n].given_current;
     bpRx_Omega = (float)bpRx_Omega * RPM_TO_RADPS;
     PID_calc(&pid_omega[n],bpRx_Angle,Set_bpAngle);
     PID_calc(&pid_speed[n],bpRx_Omega,pid_omega[n].out);
-//         float data[3];
-//    data[0] = bpRx_Angle/36;
-//    data[1] = Set_bpAngle/36;//调整拨盘电机的时候要除以三十六
-//    data[2] = xTaskGetTickCount();
-//    HAL_UART_Transmit(&huart4,(uint8_t*)data,sizeof(float)*3,0xFFFF);
-//    uint8_t tail[4] = {0x00, 0x00, 0x80, 0x7f};
-//    HAL_UART_Transmit(&huart4,tail,4,0xFFFF);
-
 }
 
 void PrintC(int n,float Set_Angle)
