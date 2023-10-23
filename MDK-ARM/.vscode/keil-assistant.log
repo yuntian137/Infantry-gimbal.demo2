@@ -1,0 +1,92 @@
+[info] Log at : 2023/10/3|13:51:33|GMT+0800
+
+[info] Log at : 2023/10/3|15:01:39|GMT+0800
+
+[info] Log at : 2023/10/3|15:14:01|GMT+0800
+
+[info] Log at : 2023/10/3|19:13:58|GMT+0800
+
+[info] Log at : 2023/10/3|19:23:30|GMT+0800
+
+[info] Log at : 2023/10/3|19:56:57|GMT+0800
+
+[info] Log at : 2023/10/3|21:17:42|GMT+0800
+
+[info] Log at : 2023/10/3|21:30:07|GMT+0800
+
+[info] Log at : 2023/10/4|08:57:43|GMT+0800
+
+[info] Log at : 2023/10/5|21:32:05|GMT+0800
+
+[info] Log at : 2023/10/5|21:37:24|GMT+0800
+
+[info] Log at : 2023/10/6|13:24:33|GMT+0800
+
+[info] Log at : 2023/10/6|13:26:02|GMT+0800
+
+[info] Log at : 2023/10/6|17:24:29|GMT+0800
+
+[SyntaxError: Expected ',' or ']' after array element in JSON at position 4357
+	at JSON.parse (<anonymous>)
+	at F.updateCppProperties (c:\Users\86139\.vscode\extensions\cl.keil-assistant-1.7.0\dist\extension.js:1:10911)
+	at F.<anonymous> (c:\Users\86139\.vscode\extensions\cl.keil-assistant-1.7.0\dist\extension.js:1:12641)
+	at Generator.next (<anonymous>)
+	at c:\Users\86139\.vscode\extensions\cl.keil-assistant-1.7.0\dist\extension.js:1:4542
+	at new Promise (<anonymous>)
+	at r (c:\Users\86139\.vscode\extensions\cl.keil-assistant-1.7.0\dist\extension.js:1:4287)
+	at F.load (c:\Users\86139\.vscode\extensions\cl.keil-assistant-1.7.0\dist\extension.js:1:11372)
+	at w.<anonymous> (c:\Users\86139\.vscode\extensions\cl.keil-assistant-1.7.0\dist\extension.js:1:8799)
+	at Generator.next (<anonymous>)
+	at a (c:\Users\86139\.vscode\extensions\cl.keil-assistant-1.7.0\dist\extension.js:1:4344)]
+[info] Log at : 2023/10/6|18:55:35|GMT+0800
+
+[info] Log at : 2023/10/6|20:26:09|GMT+0800
+
+[info] Log at : 2023/10/6|20:27:17|GMT+0800
+
+[info] Log at : 2023/10/6|20:30:59|GMT+0800
+
+[info] Log at : 2023/10/7|09:32:38|GMT+0800
+
+[info] Log at : 2023/10/8|09:34:40|GMT+0800
+
+[info] Log at : 2023/10/8|10:31:44|GMT+0800
+
+[info] Log at : 2023/10/8|10:33:25|GMT+0800
+
+[info] Log at : 2023/10/8|11:04:43|GMT+0800
+
+[info] Log at : 2023/10/8|22:57:37|GMT+0800
+
+[info] Log at : 2023/10/9|12:52:36|GMT+0800
+
+[info] Log at : 2023/10/9|13:12:12|GMT+0800
+
+[info] Log at : 2023/10/9|17:46:41|GMT+0800
+
+[info] Log at : 2023/10/10|13:04:56|GMT+0800
+
+[info] Log at : 2023/10/10|18:51:42|GMT+0800
+
+[info] Log at : 2023/10/10|19:15:36|GMT+0800
+
+[info] Log at : 2023/10/11|12:52:15|GMT+0800
+
+[info] Log at : 2023/10/11|13:37:06|GMT+0800
+
+[info] Log at : 2023/10/11|20:56:49|GMT+0800
+
+[info] Log at : 2023/10/12|15:46:11|GMT+0800
+
+[info] Log at : 2023/10/13|21:58:52|GMT+0800
+
+[info] Log at : 2023/10/14|10:10:34|GMT+0800
+
+[info] Log at : 2023/10/15|10:52:30|GMT+0800
+
+[info] Log at : 2023/10/19|13:37:43|GMT+0800
+
+[info] Log at : 2023/10/19|14:57:05|GMT+0800
+
+[info] Log at : 2023/10/20|17:27:32|GMT+0800
+

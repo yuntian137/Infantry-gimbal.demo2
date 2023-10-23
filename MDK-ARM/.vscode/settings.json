@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "pid.h": "c",
+        "main.h": "c",
+        "freertos.h": "c"
+    }
+}
