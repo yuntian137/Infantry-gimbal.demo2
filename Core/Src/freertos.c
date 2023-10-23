@@ -547,40 +547,6 @@ void guiling(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    // if (checksetpitch != 0)
-    //  {
-    //   int16_t delta_encoder;
-    //   Pre_Encoder = Rx_Encoder;
-    //   Rx_Encoder = motor_chassis[5].ecd;
-    //   delta_encoder = Rx_Encoder - Pre_Encoder;
-    //   Rx_Omega = motor_chassis[5].speed_rpm;
-    //   if (delta_encoder < -4096)
-    //   {
-    //     Total_Round++;
-    //   }
-    //   else if (delta_encoder > 4096)
-    //   {
-    //     Total_Round--;
-    //   }
-    //   Total_Encoder = Total_Round * Encoder_Num_Per_Round + Rx_Encoder + 0;
-
-    //   Rx_0Angle = ((float)Total_Encoder / (float)Encoder_Num_Per_Round) * 360;
-    //   Rx_Omega = (float)Rx_Omega * (360 / 60);
-    //   PID_calc(&pid_omega[3], Rx_0Angle, Angle);
-    //   PID_calc(&pid_speed[3], Rx_Omega, pid_omega[3].out);
-    //   CAN1_cmd_gimbal(0, pid_speed[3].out, 0, 0);
-    
-    //  }
-    //  else if (checksetpitch == 0)
-    //  {
-    //   CAN1_cmd_gimbal(0, 0, 0, 0);
-    //  }
-
-    //   if(Rx_0Angle = 0)
-    // {
-    //     vTaskSuspend(remove0Handle);
-    // }
-        
     osDelay(1);
   }
   /* USER CODE END guiling */
@@ -606,8 +572,6 @@ void pidsolvepitch(int n,float Set_pitchAngle)
         Total_Round--;
     }
     Total_Encoder = Total_Round * Encoder_Num_Per_Round + Rx_Encoder + 0;
-    //Rx_Angle = (float)Total_Encoder/(float)Encoder_Num_Per_Round * 360;
-    //Now_Torque = motor_chassis[n].given_current;
     Rx_Omega = (float)Rx_Omega * (360/60);
     Rx_Angle = Complementary_Filter_x(pitch,gyroy/16.384f);//互补滤波算法
     PID_calc(&pid_omega[n],-Rx_Angle,Set_pitchAngle);
